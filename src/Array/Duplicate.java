@@ -2,7 +2,6 @@ package Array;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Set;
 
 /**
  * TODO
@@ -17,14 +16,19 @@ import java.util.Set;
 public class Duplicate {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 1};
-        duplicate(nums);
+        Duplicate duplicate = new Duplicate();
+        System.out.println(duplicate.duplicate(nums));
+        System.out.println("--------------------");
+        System.out.println(duplicate.duplicate01(nums));
+        System.out.println("--------------------");
+        System.out.println(duplicate.duplicate02(nums));
     }
 
     /**
      * 此方法效率低，LeetCode会超时
      * @param nums
      */
-    public static boolean duplicate(int[] nums) {
+    public boolean duplicate(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] == nums[j]) {
@@ -38,7 +42,7 @@ public class Duplicate {
     /**
      * 使用排序比较
      */
-    public static boolean duplicate01(int[] nums){
+    public boolean duplicate01(int[] nums){
         Arrays.sort(nums);
         for (int i = 1; i < nums.length; i++) {
             if (nums[i] == nums[i - 1]){
@@ -51,7 +55,7 @@ public class Duplicate {
     /**
      * 使用Set集合
      */
-    public static boolean duplicate02(int[] nums){
+    public boolean duplicate02(int[] nums){
         HashSet<Integer> temp = new HashSet<>();
         for (int num : nums) {
             if(!temp.add(num)){

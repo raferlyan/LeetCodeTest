@@ -1,7 +1,5 @@
 package Array;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 
 /**
  * TODO 删除排序数组中的重复项
@@ -14,10 +12,7 @@ import java.util.Arrays;
 public class Deduplication02 {
     public static void main(String[] args) {
         int[] nums = {1,1,2,3,3,4,5,5,6};
-
-
         removeDuplicates(nums);
-
     }
     public static void removeDuplicates(int[] nums) {
 
